@@ -55,3 +55,5 @@ REMAINING TASKS
 - All copy-pasted d3 graphs had fixed dimension which would not display properly on smaller screens; I thought they all needed to be remade.
 - In-text glossary fetching is not enabled on every page. I only knew to add the same code under every function in "views.py" so every page could load "glossary_dict" which the get_item custom tag would grab glossary info from. I believed that a smarter way for all functions to inherit these lines must exist.
 - I wanted to add all bibliography as an object to Models, but bib info was not full and I did not have the time. Once added, I would like to create another custom tag to grab info from the database, and then enable an topple-show feature for clickable citations. However, it still needs to be consulted whether to carry out these steps.
+
+Mary was here!
