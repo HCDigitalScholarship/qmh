@@ -21,4 +21,4 @@ RUN SECRET_KEY=1 python myAsylum/manage.py collectstatic --noinput --clear
 
 EXPOSE 8000
 
-CMD python myAsylum/manage.py runserver 0.0.0.0:8000
+CMD python myAsylum/manage.py migrate; python myAsylum/manage.py runserver 0.0.0.0:8000
