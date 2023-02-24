@@ -12,8 +12,6 @@ urlpatterns = [
     #flatpages
     url(r'^pages/', include('django.contrib.flatpages.urls')),
     
-    path('bibliography/', flat_views.flatpage, {'url': '/bibliography/'}, name='bibliography'),
-    path('health/', flat_views.flatpage, {'url': '/health/'}, name='health'),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     path('pages/', include('django.contrib.flatpages.urls')),
 
