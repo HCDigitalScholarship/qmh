@@ -25,7 +25,10 @@ SECRET_KEY = '6a7yia%lmnyz_j3&@yyeqp$g=kx)m@kqn#3wv%4b&8s*r$aso7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['165.22.186.240', '127.0.0.1', 'localhost']
+if os.environ.get('ALLOWED_HOSTS'):
+    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',')
+else:
+    ALLOWED_HOSTS = ['165.22.186.240', '127.0.0.1', 'localhost']
 
 SITE_ID = 1
 
