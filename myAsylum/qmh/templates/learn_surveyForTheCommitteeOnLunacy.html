@@ -1,0 +1,404 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<title>Survey for the Committee on Lunacy | Quakers &amp; Mental Health</title>
+
+    <link rel="stylesheet" href="{% static 'css/elements.css' %}">
+
+    <script src="{% static 'js/makePieChartSVG.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/makeBubbleMapLeaflet.js' %}" type="text/javascript"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+
+    <!-- required for leaflet maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <style>
+      div.bubbleMap {
+        height: 400px;
+        max-width: 100%;
+        z-index: 0;
+      }
+      svg {
+        max-width: 100%;
+        height: auto;
+      }
+      
+      .pie_charts {
+        float: left;
+      }
+
+      .gender {
+        float: left;
+        flex: 33.33%;
+      }
+      .pie_charts::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+  
+    </style>
+
+
+
+
+    <h2>Survey for the Committee on Lunacy</h2>
+    <p>In 1902, the Friends Hospital filled out a <a href="https://archives.tricolib.brynmawr.edu/repositories/5/archival_objects/31408">survey</a> sent by the State of Pennsylvania Committee on Lunacy. This survey contains data for the year ending September 30th, 1902 and provides valuable insight into the state of the Hospital at the turn of the century. It includes information such as the number of patients, their nativity and residence, their sex, and the form of illness they experienced. </p>
+    <p>The Friends Hospital <a href="https://archives.tricolib.brynmawr.edu/repositories/5/archival_objects/31401">Admission Book, 1817-1911</a> provides myriad information about the patients of Friends Hospital, such as the date of their admission, nativity, sex, and form of illness. As such, it is priceless in understanding the patients of Friends Hospital. As of summer 2023, 3332 entries have been collected, up to October 1902.</p>
+    <p>The following visualizations compare data from the 1902 Survey and the Admission Book. In particular, patient nativity, gender, and forms of illness were considered. </p>
+
+    <article id="Nativity">
+        <h3>Nativity of Friends Hospital Patients</h3>
+        <p>
+          The following bubble maps show the nativity of patients admitted to Friends Hospital. The first shows that of every patient admitted until September 30th, 1902, when the survey was filled out. The second uses data from the survey. The size of each bubble corresponds to the number of patients. Unsurprisingly, both maps show that the largest number of patients came from Pennsylvania. The Admissions Book is more specific as to where a patient came from, seen for instance in the number of patients from Philadelphia, where the survey only notes the state or country patients came from. 
+        </p>
+        <p> 
+          Both maps show a somewhat expected correlation between proximity to Friends Hospital and number of patients. Data from the survey shows that some patients also came from New Jersey and New York. The admission book also shows a number of patients from Maryland and Delaware. Both data sets also show similar exceptions to this rule, namely England, Ireland, and Germany. Furthermore, the only patient from Kansas was accounted for in the survey while one of two patients from Georgia, Illinois, and Austria were. Similarly, one of three patients from Russia was admitted during this time.</p>
+        <p style="color: grey;">
+          Click and drag to navigate the maps. Scroll to zoom. Click on a bubble to display text. Alternatively, use the arrow keys to pan, + to zoom in, - to zoom out, and T to display text.
+        </p>
+            
+    </article>
+        <div id="nativity_overall" tabindex="0" class="bubbleMap"></div>
+        <div id="nativity_survey" tabindex="0" class="bubbleMap"></div>
+
+
+    <article id="Gender">
+        <h3>Gender of Friends Hospital Patients</h3>
+        <div id="gender" class="pie_charts">
+            <svg id="gender_overall" tabindex ="0" class="gender" viewBox="0 0 250 250" width="250" height="250" alt="Pie chart showing the split in patients at Friends Hospital from 1817 to September 30th, 1902. There were 1662 female and 1668 male patients." style="display:flex"></svg>
+            
+            <div style="width: 250px; margin: 0;" class="gender gender_by_year">
+              <svg id="gender_year" tabindex ="0" viewBox="0 0 250 250" width="250" height="250"></svg>
+              <input id="year_input" type="range" min="1817" max="1902" step="1" value="1817" style="width: 250px;">
+              <p style="text-align:center">Year: <output id="value"></output></p>
+            </div>
+
+            <svg id="gender_survey" tabindex="0" class="gender" viewBox = "0 0 250 250" width="250" height="250" alt="Pie chart showing the split in patients at Friends Hospital acounted for by the 1902 survey. There were 50 female and 37 male patients." style="display:flex"></svg>
+        </div>
+        <p>
+            These pie charts show the sex of patients at Friends Hospital. While there was a higher proportion of female patients counted in the survey (approximately 43% male patients to 57% female patients), this is not unusual. There are many years in which there were more female than male patients admitted, and vice-versa, as shown in the middle chart. As the first pie chart shows, the overall number of male and female patients was almost equal, as of September 30th, 1902. However, the higher proportion of female patients admitted at this time may indicate the start of a trend. Data from the <a href="https://archives.tricolib.brynmawr.edu/repositories/5/archival_objects/699563">1923 Annual Report</a> shows 2605 male and 2910 female patients were admitted to Friends Hospital by 1923. In other words, by 1923 approximately 47% of patients were male and 53% were male. Between 1902 and 1923 the proportion of male to female patients admitted is 43% to 57%, which is similar to the data from the survey. This means that between 1902 and 1923, approximately 14 more female than male patients were admitted each year. Women were considered more easily cured than men (Prichard 106), so this may have been in an effort to bolster cure rates. 
+        </p>
+        <p>
+          Notably, while data from the admission book for 3332 patients has been recorded, only 3330 patients are represented in the first pie chart. This is due to the fact that there are two patients for which no sex is recorded in the original source. Why this is the case is unclear, though for these entries a large number of columns are left blank in the original source, implying that the entries for these patients were perhaps mistakenly left incomplete. 
+        </p>
+
+    </article>
+    
+    
+    <article id="Illnesses">
+        <h3>Forms of Illness</h3>
+        
+        <p>
+            This grouped bar chart illustrates the proportions of different <a href="https://qmh.haverford.edu/types-of-mental-illness#terms">types of insanity</a> experienced by patients admitted to Friends Hospital. Some changes were made to the data in order to make these charts more readable. First, similar forms of illness were grouped together. For example, acute and chronic mania were grouped together simply as mania. Second, data from the admission book was narrowed down to only include forms of illness that were also recorded in the survey.
+            
+        </p>
+        <svg id="types" style="float: left; max-width: 100%; height: auto" width="500" height="500" viewBox="0 0 500 500" tabindex="0" alt="Grouped bar charts showing the proportion of different illnesses experienced by Friends Hospital patients for the admission book and survey data."></svg>
+        <p>
+            The most notable difference between the two data sets is the proportion of manic patients. 53% of the patients in the admission book accounted for in this bar chart, 1421 total, were said to experience some form of mania, where it is only 24% in the survey. As with gender, this alone is not especially significant. It could similarly indicate the start of a trend, but further research is needed before conclusions can be drawn. The high number of manic patients up to this point is not surprising given historical context. According to French psychiatrist Jean-Étienne Esquirol, quoted in James Prichard's <i>A Treatise on Insanity and Other Disorders Affecting the Mind</i>, "a greater proportion in the cases of mania are cured than of any other variety of madness" (Prichard 100). Since Friends Hospital was interested in having a high cure rate, it naturally follows that they would admit as many patients considered easier to cure as possible. Another reason for the large number of manic patients is likely to do with the nature of the illness itself. Mania is characterized by cases "in which the mind is totally deranged, and the individual affected talks nonsense, or expresses himself wildly and absurdly on every subject" (Prichard 15). With this definition in mind, mania would be both more obvious and more disruptive than other mental illnesses, thereby increasing the likelihood that it is recognized.
+        </p>
+        <p>
+            The chart also highlights a discrepancy between the two data sets. Data from the admission book shows three patients recorded as having a cocaine habit (note that one of these patient was recorded as having both an opium habit and cocaine habit); however, data from the survey shows four patients recorded as such. Exactly why this is remains unclear. One possibility is simply mistakes in the data collection process, either for the admission book or the survey. Alternatively, the discrepancy could be between the sources themselves. This could be for any number of reasons, such as patients being initially recorded as experiencing some other form of illness at the time of their admission and later being found to have such a habit. Another source may provide some insight into the cause of this discrepancy, but as of now no such source has been found. This discrepancy demonstrates the limitations of a survey as a format, as we have no way of knowing which patients had a cocaine habit who were accounted for in the survey.
+        </p>
+        
+    </article>
+    <article>
+      <h3>References</h3>
+      <ul style="list-style-type: none;">
+        <li>
+          1921-1926, Box: 3. Friends Hospital records, HC.MC-1261. Haverford College Quaker & Special Collections.
+        </li>
+        <br>
+        <li>
+          Admission Book, 1817 - 1911, item: 32. Friends Hospital records, HC.MC-1261. Haverford College Quaker & Special Collections. 
+        </li>
+        <br>
+        <li>
+          Prichard, James C. <i>A Treatise on Insanity and Other Disorders Affecting the Mind.</i> E.L. Cary and A. Hart, 1837.
+        </li>
+        <br>
+        <li>
+          Survey for the Committee on Lunacy, 1902, Box: 22. Friends Hospital records, HC.MC-1261. Haverford College Quaker & Special Collections.
+        </li>
+        
+      </ul>
+    </article>
+    <script>
+      let nativity_overall = {
+        csv: "{% static 'csv/nativity_overall.csv' %}",
+        places: "Nativity",
+        total: "Total",
+        colors: "Color",
+        div: "nativity_overall"
+      }
+      let nativity_survey = {
+        csv: "{% static 'csv/nativity_survey.csv' %}",
+        places: "Nativity",
+        total: "Total",
+        colors: "Color",
+        div: "nativity_survey",
+      }
+      makeBubbleMapLeaflet(nativity_overall);
+      makeBubbleMapLeaflet(nativity_survey);
+    
+    </script>
+    <script>
+      let colors = {
+          'Male': '#fde725',
+          'Female': '#440154'
+      }
+      let gender_overall = {
+          csv: "{% static 'csv/gender_overall.csv' %}",
+          values: 'Total',
+          labels: 'Sex',
+          div: '#gender_overall',
+          color: colors
+      }
+      let gender_survey = {
+          csv: "{% static 'csv/gender_survey.csv' %}",
+          values: 'Total',
+          labels: 'Gender',
+          div: '#gender_survey',
+          color: colors
+      }
+
+          
+      makePieChartSVG(gender_overall)
+      makePieChartSVG(gender_survey)
+    </script>
+
+    <script>
+
+      d3.csv("{% static 'csv/gender_by_year.csv' %}", function(err, rows) {
+          function unpack(rows, key) {
+              return rows.map(function(row) {return row[key];});
+          }
+          let years = unpack(rows, 'Year')
+              sex = unpack(rows, 'Sex')
+              total = unpack(rows, '0') //default column name using pandas groupby().size()
+
+          let dataList = []
+          for (let i = 0; i < years.length/2; i++) { 
+              let data = {};
+              data['Year'] = years[2 * i] //year repeats twice for each year
+              data['Female'] = total[(2 * i)] //female patients are even indices
+              data['Male'] = total[(2 * i) + 1] //male patients are odd
+              dataList.push(data)
+          }
+
+          let color = {
+              'Male': '#fde725',
+              'Female': '#440154'
+          }
+          
+          function drawPie(data) {
+              let width = 250,
+              height = 250,
+              margin = 20
+
+              newData = delete data.Year //delete year so it's not read as data
+
+              let radius = Math.min(width, height) / 2 - margin
+                  
+              let svg = d3.select("#gender_year")
+                  .append("svg")
+                  .attr("width", width)
+                  .attr("height", height)
+                  .append("g")
+                  .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+              let pie = d3.pie()
+                  .value(function(d) {return d.value; })
+
+              let data_ready = pie(d3.entries(data))
+              
+              let arcGenerator = d3.arc()
+                  .innerRadius(0)
+                  .outerRadius(radius)
+
+              svg
+                  .selectAll('mySlices')
+                  .data(data_ready)
+                  .enter()
+                  .append('path')
+                  .attr('d', arcGenerator)
+                  .attr('fill', function(d){ return(color[d.data.key]) })
+                  .attr("stroke", "black")
+                  .style("stroke-width", "2px")
+                  .style("opacity", 0.7)
+
+              svg
+                  .selectAll('mySlices')
+                  .data(data_ready)
+                  .enter()
+                  .append('text')
+                  .text(function(d){ return d.data.key + ", " + d.data.value})
+                  .attr("transform", function(d) { return "translate(" + arcGenerator.centroid(d) + ")";  })
+                  .style("text-anchor", "middle")
+                  .style("font-size", 17) 
+              }
+
+          drawPie(dataList[0]) //draw first pie chart by default
+
+          let value = document.querySelector("#value");
+          let input = document.querySelector("#year_input");
+          value.textContent = input.value;
+          input.addEventListener("input", (event) => {
+            value.textContent = event.target.value;
+
+            let div = document.getElementById('gender_year');
+            while(div.firstChild){
+                div.removeChild(div.firstChild); //delete current chart
+            }
+            drawPie(dataList[value.textContent - 1817]) //draw new chart based on year 
+
+          });
+
+
+          }) 
+      
+    </script>
+    <script>
+        
+        let margin = {top: 10, right: 30, bottom: 50, left: 50},
+        width = 500 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom; 
+    
+
+    let svg = d3.select("#types")
+      .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform",
+              "translate(" + margin.left + "," + margin.top + ")");
+      
+
+    d3.csv("{% static 'csv/types_of_illness.csv' %}", function(data) {
+    
+    
+      let subgroups = data.columns.slice(2)
+     
+      let groups = d3.map(data, function(d){return(d['Forms of Disease'])}).keys()
+    
+
+      let x = d3.scaleBand()
+          .domain(groups)
+          .range([0, width])
+          .padding([0.2])
+      svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x).tickSize(0))
+        .selectAll("text")
+            .attr("transform", "translate(0,0)rotate(-45)")
+            .style("text-anchor", "end");
+    
+      let y = d3.scaleLinear()
+        .domain([0, 0.6])
+        .range([ height, 0 ]);
+      svg.append("g")
+        .call(d3.axisLeft(y));
+    
+      let xSubgroup = d3.scaleBand()
+        .domain(subgroups)
+        .range([0, x.bandwidth()])
+        .padding([0.05])
+    
+      let color = d3.scaleOrdinal()
+        .domain(subgroups)
+        .range(['#fde725','#440154'])
+    
+      // add bars
+      svg.append("g")
+        .selectAll("g")
+        .data(data)
+        .enter()
+        .append("g")
+          .attr("transform", function(d) { return "translate(" + x(d['Forms of Disease']) + ",0)"; })
+        .selectAll("rect")
+        .data(function(d) { return subgroups.map(function(key) { return {key: key, value: d[key]}; }); })
+        .enter()
+          .append("rect")
+            .attr("x", function(d) {return xSubgroup(d.key);})
+            .attr("y", function(d) { return y(d.value); })
+            .attr("width", xSubgroup.bandwidth())
+            .attr("height", function(d) { return height - y(d.value); })
+            .attr("fill", function(d) { return color(d.key); })
+            .attr("stroke-width", 1)
+            .attr("stroke", "#000")
+        
+      //add text
+      svg.append("g")
+        .selectAll("g")
+        .data(data)
+        .enter()
+        .append("g")
+          .attr("transform", function(d) { return "translate(" + x(d['Forms of Disease']) + ",0)"; })
+        .selectAll("text")
+        .data(function(d) { return subgroups.map(function(key) { return {key: key, value: d[key]}; }); })
+        .enter()
+        .append('text')
+          .attr("x", function(d) {return xSubgroup(d.key);})
+          .attr("y", function(d) {return y(d.value) - 5; })
+          .text(function(d) { return parseFloat(d.value).toFixed(3); })
+          .style("font-size", "7px")
+
+      //add legend
+      svg.append("rect")
+        .attr("x",330)
+        .attr("y",0)
+        .attr("width", 16)
+        .attr("height", 16)
+        .style("fill", "#fde725")
+        .attr("stroke-width", 1)
+        .attr("stroke", "#000")
+      svg.append("text")
+          .attr("x", 350)
+          .attr("y", 10)
+          .text("1902 Survey")
+          .style("font-size", "15px")
+          .attr("alignment-baseline","middle")
+
+      svg.append("rect")
+        .attr("x",330)
+        .attr("y", 20)
+        .attr("height",16)
+        .attr("width",16)
+        .style("fill","#440154")
+        .attr("stroke-width", 1)
+        .attr("stroke", "#000")
+      svg.append("text")
+        .attr("x", 350)
+        .attr("y", 30)
+        .text("Overall")
+        .style("font-size", "15px")
+        .attr("alignment-baseline","middle");
+    
+        
+    })
+    </script>
+
+
+    <!--  foundation/jquery files -->
+
+    <script src="{% static 'old/jquery.js' %}"></script>
+    <script src="{% static 'old/foundation.min.js' %}"></script>
+    
+    <!-- Google analytics script below -->
+
+    <script>
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ ga('create', 'UA-45185227-11', 'auto');
+ ga('send', 'pageview');
+    </script>
+    <script>
+      $(document).foundation();
+    </script>
+
+{% endblock %}

@@ -39,6 +39,7 @@ def visual_scatterplotPatientAdmitAgeVsAdmitYear(request):
             admitAge.append(int(a))
             firstName.append(f)
             lastName.append(l)
+            
     # Of all 2208 patient entries,
     # 336 entries either have empty year entry ('') or have zero age entry (0),
     # leaving only 1872 valid points entered for making the scatterplot.
@@ -110,6 +111,9 @@ def learn_raceAndStaff(request):
 def learn_philanthropicNetworks(request):
     return render(request, 'learn_philanthropicNetworks.html')
 
+def learn_surveyForTheCommitteeOnLunacy(request):
+    return render(request, 'learn_surveyForTheCommitteeOnLunacy.html')
+
 #def learn_fromYorkRetreatToFriendsAsylum(request):# one of the new grouping topic of articles; effort aborted
 #    return render(request, 'learn_fromYorkRetreatToFriendsAsylum.html')
 
@@ -147,6 +151,7 @@ def learn_moralTreatmentAndFamily(request):
 
 def learn_GenderAndDeath(request):
     return render(request, 'learn_GenderAndDeath.html')
+
 
 #    "patients"
 
@@ -198,6 +203,9 @@ def bibliography(request):
 
 def essays(request):
     return render(request, 'essays.html')
+
+def essay_23Roark(request):
+    return render(request, 'essay_23Roark.html')
 
 def essay_22Bratt(request):
     return render(request, 'essay_22Bratt.html')
