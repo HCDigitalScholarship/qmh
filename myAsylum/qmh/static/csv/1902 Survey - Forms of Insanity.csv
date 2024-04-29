@@ -1,0 +1,16 @@
+Forms of Disease,Male,Female,Total
+Acute Mania,5,5,10
+Chronic Mania,5,4,9
+Epileptic Mania,-,1,1
+Periodic Mania,-,-,-
+Puerperal Mania,-,1,1
+Monomania,1,1,2
+Acute Melancholy,4,22,26
+Acute Dementia,3,6,9
+Chronic Dementia,-,-,-
+Senile Dementia,2,3,5
+Cocaine Habit,2,2,4
+Dipsomania,1,-,1
+Imbecility,3,3,6
+Paresis,11,1,12
+Total,37,49,86

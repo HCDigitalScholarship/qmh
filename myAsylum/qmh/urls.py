@@ -44,6 +44,7 @@ urlpatterns = [
         path('training-of-nurses', views.learn_trainingOfNurses, name='learn_trainingOfNurses'),
         path('race-and-staff', views.learn_raceAndStaff, name='learn_raceAndStaff'),
         path('philanthropic-networks', views.learn_philanthropicNetworks, name='learn_philanthropicNetworks'),
+        path('survey-for-the-committee-on-lunacy', views.learn_surveyForTheCommitteeOnLunacy, name='learn_surveyForTheCommitteeOnLunacy'),
         #path('learn/from-york-retreat-to-friends-asylumf', views.learn_fromYorkRetreatToFriendsAsylum, name='learn_fromYorkRetreatToFriendsAsylum'),# one of the new grouping topic of articles; effort aborted
         #path('learn/reasoning-about-insanity', views.learn_reasoningAboutInsanity, name='learn_reasoningAboutInsanity'),# one of the new grouping topic of articles; effort aborted
 
@@ -83,6 +84,7 @@ urlpatterns = [
     path('essays/21zhu/', views.essay_21zhu, name='essay_21zhu'),
     path('essays/21scully/', views.essay_21scully, name='essay_21scully'),
     path('essays/22Bratt/', views.essay_22Bratt, name='essay_22Bratt'),
+    path('essays/23Roark/', views.essay_23Roark, name='essay_23Roark'),
 
     path('admission-data/', views.patientTable, name='patientTable'),
 

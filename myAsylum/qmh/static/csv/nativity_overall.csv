@@ -1,0 +1,59 @@
+,Nativity,Total,Patients,Longitude,Latitude,Color
+0,Alabama,1,1-10 patients,-86.9023,32.3182,#440154
+1,Austria,2,1-10 patients,14.5501,47.5162,#440154
+2,Baltimore,1,1-10 patients,-76.6122,39.2904,#440154
+3,Barbados,2,1-10 patients,-59.5432,13.1939,#440154
+4,Bavaria (Germany),2,1-10 patients,11.4979,48.7904,#440154
+5,Boston,1,1-10 patients,-71.0589,42.3601,#440154
+6,Canada,7,1-10 patients,-106.3468,56.1304,#440154
+7,Cherryville (Pa.),1,1-10 patients,-75.5385,40.754,#440154
+8,Connecticut,5,1-10 patients,-73.0877,41.6032,#440154
+9,Cuba,1,1-10 patients,-77.7812,21.8218,#440154
+10,D.C.,4,1-10 patients,-77.0369,38.9072,#440154
+13,Florida,1,1-10 patients,-81.5158,27.6648,#440154
+14,France,2,1-10 patients,2.2137,46.2276,#440154
+15,Georgia,2,1-10 patients,-82.9071,32.1574,#440154
+17,Guernsey,1,1-10 patients,-2.5895,49.4482,#440154
+18,Illinois,2,1-10 patients,-89.3985,40.6331,#440154
+19,Indiana,7,1-10 patients,-85.6024,40.5512,#440154
+20,Iowa,3,1-10 patients,-93.0977,41.878,#440154
+22,Italy,1,1-10 patients,12.5674,41.8719,#440154
+23,Jersey,1,1-10 patients,-2.1313,49.2144,#440154
+24,Kansas,1,1-10 patients,-98.4842,39.0119,#440154
+25,Kentucky,4,1-10 patients,-84.27,37.8393,#440154
+26,Long Island (N.Y.),2,1-10 patients,-73.135,40.7891,#440154
+27,Louisiana,8,1-10 patients,-91.5209,30.5191,#440154
+28,Maine,2,1-10 patients,-69.4455,45.2538,#440154
+31,Michigan,2,1-10 patients,-85.6024,44.3148,#440154
+32,Missouri,1,1-10 patients,-91.8318,37.9643,#440154
+33,New Hampshire,6,1-10 patients,-71.5724,43.1939,#440154
+38,Oregon,1,1-10 patients,-120.5542,43.8041,#440154
+41,Prussia (Germany),3,1-10 patients,20.4833,54.7333,#440154
+42,Québec (Province),1,1-10 patients,-73.5335,52.935,#440154
+43,Rhode Island,2,1-10 patients,-71.4774,41.5801,#440154
+44,Russia,3,1-10 patients,105.3188,61.524,#440154
+45,Saxony,1,1-10 patients,13.2017,51.1045,#440154
+46,Scotland,2,1-10 patients,-4.2026,56.4907,#440154
+47,South America,1,1-10 patients,-55.4915,-8.7832,#440154
+48,South Carolina,2,1-10 patients,-81.1637,33.8361,#440154
+49,Spain,1,1-10 patients,-3.7492,40.4637,#440154
+50,Switzerland,2,1-10 patients,8.2275,46.8182,#440154
+51,Tennessee,3,1-10 patients,-86.5804,35.5175,#440154
+52,Texas,3,1-10 patients,-99.9018,31.9686,#440154
+53,U.S.,1,1-10 patients,-95.7129,37.0902,#440154
+54,Vermont,1,1-10 patients,-72.5778,44.5588,#440154
+56,Wales,6,1-10 patients,-3.7837,52.1307,#440154
+57,West Virginia,5,1-10 patients,-80.4549,38.5976,#440154
+30,Massachusetts,19,11-50 patients,-71.3824,42.4072,#3b528b
+36,North Carolina,11,11-50 patients,-79.0193,35.7596,#3b528b
+37,Ohio,20,11-50 patients,-82.9071,40.4173,#3b528b
+55,Virginia,23,11-50 patients,-78.6569,37.4316,#3b528b
+11,Delaware,54,51-200 patients,-75.5277,38.9108,#21918c
+12,England,81,51-200 patients,-1.1743,52.3555,#21918c
+16,Germany,97,51-200 patients,10.4515,51.1657,#21918c
+21,Ireland,92,51-200 patients,-7.3055,53.7798,#21918c
+29,Maryland,75,51-200 patients,-76.6413,39.0458,#21918c
+34,New Jersey,171,51-200 patients,-74.4057,40.0583,#21918c
+35,New York,51,51-200 patients,-74.2179,43.2994,#21918c
+40,Philadelphia (Pa.),304,201-600 patients,-75.1652,39.9526,#5ec962
+39,Pennsylvania,947,601-1200 patients,-77.1945,41.2033,#fde725
