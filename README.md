@@ -28,7 +28,15 @@ Example:
 ## Adding New Essays
 
 1. Upload the PDF to [this static folder](https://github.com/HCDigitalScholarship/qmh-v2/tree/master/myAsylum/static/essays) (note: there are two static folders, we don't know why. `/myAsylum/static/essays` in the correct one). 
+
+* - I think it actually should go in qmh/myAsylum/qmh/static/essays, it seems that the site from my end isn't hosting the 22,23 files from just qmh/myAsylum/static/essays 
+
+** - What is the naming convention for these files? Is it year the author graduates or something different?
+
 2. Create the html template in `/myAsylum/qmh/templates/` (you can mostly duplicate an existing essay template)
+
+* - duplicate essay_23Roark.html for reference
+
 3. Add the page to the `views.py` [here](https://github.com/HCDigitalScholarship/qmh-v2/blob/master/myAsylum/qmh/views.py)
 4. Add the page in `urls.py` [here](https://github.com/HCDigitalScholarship/qmh-v2/blob/master/myAsylum/qmh/urls.py)
 5. Update the table in `essays.html` [here](https://github.com/HCDigitalScholarship/qmh-v2/blob/master/myAsylum/qmh/templates/essays.html) to include the link to your new essay page
