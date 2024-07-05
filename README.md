@@ -27,11 +27,11 @@ Example:
 
 ## Adding New Essays
 
-1. Upload the PDF to [this static folder](https://github.com/HCDigitalScholarship/qmh-v2/tree/master/myAsylum/static/essays) (note: there are two static folders, we don't know why. `/myAsylum/static/essays` in the correct one). 
+1. Upload the PDF to [this static folder](https://github.com/HCDigitalScholarship/qmh-v2/tree/master/myAsylum/static/essays) (note: there are two static folders, we don't know why. `/myAsylum/static/essays` in the correct one)* 
 
-* - I think it actually should go in qmh/myAsylum/qmh/static/essays, it seems that the site from my end isn't hosting the 22,23 files from just qmh/myAsylum/static/essays 
+* - I(Mike) think it actually should go in qmh/myAsylum/qmh/static/essays, it seems that after branching from commit f05dfea, 22_Bratt.pdf was present in the qmh/myAsylum/static/essays folder, but not the qmh/myAsylum/qmh/static/essays folder, and the locally hosted site showed no pdf.  After cp-ing 22_Bratt.pdf over to the more nested essays dictionary, the site is now hosting this essay file correctly, indicating that the latter folder location is the correct one.
+TLDR: use /qmh/myAsylum/qmh/static/essays/ for the location
 
-** - What is the naming convention for these files? Is it year the author graduates or something different?
 
 2. Create the html template in `/myAsylum/qmh/templates/` (you can mostly duplicate an existing essay template)
 
