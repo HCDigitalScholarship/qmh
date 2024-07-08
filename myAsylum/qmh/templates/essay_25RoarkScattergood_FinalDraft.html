@@ -1,0 +1,24 @@
+
+{% extends "base.html" %}
+{% load staticfiles %} 
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/elements.css' %}">
+
+<title>Essays | Quakers &amp; Mental Health</title>
+
+<h4>Roark Scattergood</h4>
+<h5>Maia Roark '25</h5>
+<h5>Summer 2024</h5>
+<p><a href="{% static 'essays/25RoarkScattergood_FinalDraft.pdf' %}">Download the essay as PDF</a>.</p>
+
+<object data="{% static 'essays/25RoarkScattergood_FinalDraft.pdf' %}" type="application/pdf" width="100%" height="900">
+	<iframe src="{% static 'essays/25RoarkScattergood_FinalDraft.pdf' %}" width="100%" height="900">
+	<p>Your browser does not support PDFs. <a href="{% static 'essays/25RoarkScattergood_FinalDraft.pdf' %}">Download the essay as PDF</a>.</p>
+	</iframe>
+</object>
+
+<h5 class="prev-next"><span style="float: left;"><a href="{% url 'home' %}">Back to Homepage</a></span><span style="float: right;"><a href="{% url 'essays' %}">View All Essays</a></span></h5>
+
+{% endblock %}
