@@ -204,6 +204,60 @@ def bibliography(request):
 def essays(request):
     return render(request, 'essays.html')
 
+def essay_25Anna_Hannah_Bussom(request):
+    return render(request, 'essay_25Anna_Hannah_Bussom.html')
+
+def essay_25Caldwell_Matthews(request):
+    return render(request, 'essay_25Caldwell_Matthews.html')
+
+def essay_25Claire_Molly_Blumberg(request):
+    return render(request, 'essay_25Claire_Molly_Blumberg.html')
+
+def essay_25Clara_M_McAdam(request):
+    return render(request, 'essay_25Clara_M_McAdam.html')
+
+def essay_25Clara_Thompson(request):
+    return render(request, 'essay_25Clara_Thompson.html')
+
+def essay_25Frank_Atwood(request):
+    return render(request, 'essay_25Frank_Atwood.html')
+
+def essay_25Herman_Chaykin(request):
+    return render(request, 'essay_25Herman_Chaykin.html')
+
+def essay_25Ida_Eubank_Lena_Jent_Case_Study(request):
+    return render(request, 'essay_25Ida_Eubank_Lena_Jent_Case_Study.html')
+
+def essay_25Jean_Steward(request):
+    return render(request, 'essay_25Jean_Steward.html')
+
+def essay_25Katie_Pantales(request):
+    return render(request, 'essay_25Katie_Pantales.html')
+
+def essay_25Louis_Spaeth(request):
+    return render(request, 'essay_25Louis_Spaeth.html')
+
+def essay_25Quaker_Triangle(request):
+    return render(request, 'essay_25Quaker_Triangle.html')
+
+def essay_25RoarkScattergood_FinalDraft(request):
+    return render(request, 'essay_25RoarkScattergood_FinalDraft.html')
+
+def essay_25RoyECobb(request):
+    return render(request, 'essay_25RoyECobb.html')
+
+def essay_25SadieMcCaffery_CaseStudyNotes(request):
+    return render(request, 'essay_25SadieMcCaffery_CaseStudyNotes.html')
+
+def essay_25WilliamPNorris(request):
+    return render(request, 'essay_25WilliamPNorris.html')
+
+def essay_25WillieBachman(request):
+    return render(request, 'essay_25WillieBachman.html')
+
+def essay_25publicvsprivate(request):
+    return render(request, 'essay_25publicvsprivate.html')
+
 def essay_23Roark(request):
     return render(request, 'essay_23Roark.html')
 
