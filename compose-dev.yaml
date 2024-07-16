@@ -1,3 +1,4 @@
+#version should be 3.3 on DigitalOcean Droplets!
 version: "3.9"
 services:
   web:

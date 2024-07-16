@@ -28,7 +28,7 @@ DEBUG = True
 if os.environ.get('ALLOWED_HOSTS'):
     ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',')
 else:
-    ALLOWED_HOSTS = ['165.22.186.240', '127.0.0.1', 'localhost']
+    ALLOWED_HOSTS = ['137.184.59.75','165.22.186.240', '127.0.0.1', 'localhost']
 
 SITE_ID = 1
 
