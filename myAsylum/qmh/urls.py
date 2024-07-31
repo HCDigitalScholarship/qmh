@@ -104,6 +104,12 @@ urlpatterns = [
     path('essays/25WillieBachman/', views.essay_25WillieBachman, name='essay_25WillieBachman'),
     path('essays/25publicvsprivate/', views.essay_25publicvsprivate, name='essay_25publicvsprivate'),
 
+    path('essays/27AnnaBroomall/', views.essay_27AnnaBroomall, name='essay_27AnnaBroomall'),
+    path('essays/27CaseHistoryofHelenCLinsley/', views.essay_27CaseHistoryofHelenCLinsley, name='essay_27CaseHistoryofHelenCLinsley'),
+    path('essays/27CaseHistoryofNellieSchofield/', views.essay_27CaseHistoryofNellieSchofield, name='essay_27CaseHistoryofNellieSchofield'),
+    path('essays/27CaseHistoryofYestaLefkowitz/', views.essay_27CaseHistoryofYestaLefkowitz, name='essay_27CaseHistoryofYestaLefkowitz'),
+    path('essays/27LeilaniFinalEssay/', views.essay_27LeilaniFinalEssay, name='essay_27LeilaniFinalEssay'),
+
     path('admission-data/', views.patientTable, name='patientTable'),
 
     ]

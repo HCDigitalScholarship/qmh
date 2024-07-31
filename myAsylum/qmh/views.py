@@ -204,6 +204,21 @@ def bibliography(request):
 def essays(request):
     return render(request, 'essays.html')
 
+def essay_27AnnaBroomall(request):
+    return render(request, 'essay_27AnnaBroomall.html')
+
+def essay_27CaseHistoryofHelenCLinsley(request):
+    return render(request, 'essay_27CaseHistoryofHelenCLinsley.html')
+
+def essay_27CaseHistoryofNellieSchofield(request):
+    return render(request, 'essay_27CaseHistoryofNellieSchofield.html')
+
+def essay_27CaseHistoryofYestaLefkowitz(request):
+    return render(request, 'essay_27CaseHistoryofYestaLefkowitz.html')
+
+def essay_27LeilaniFinalEssay(request):
+    return render(request, 'essay_27LeilaniFinalEssay.html')
+
 def essay_25Anna_Hannah_Bussom(request):
     return render(request, 'essay_25Anna_Hannah_Bussom.html')
 
